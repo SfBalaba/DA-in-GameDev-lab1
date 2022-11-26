@@ -1,5 +1,5 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
-Отчет по лабораторной работе #3 выполнил(а):
+Отчет по лабораторной работе #1 выполнил(а):
 - Балаба Софья Николаевна
 - РИ210940
 Отметка о выполнении заданий (заполняется студентом):
@@ -35,170 +35,341 @@
 - ✨Magic ✨
 
 ## Цель работы
-познакомиться с программными средствами для создания системы машинного обучения и ее интеграции в Unity.
+Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
 
 ## Задание 1
-### Реализовать систему машинного обучения в связке Python - Google-Sheets – Unity.
+### Напсиать программы Hello World на Python и Unity.
 Ход работы:
+- Для Python в отчёте привести скриншоты с демонстрацией сохранения документа google.colab на свой диск с запуском программы, выводящей сообщение Hello World.
 
--	Создала новый пустой 3D проект на Unity.
-![1](https://user-images.githubusercontent.com/102922461/200721900-bc47eef4-0a3e-469d-933e-363d8d9e59d8.jpg)
+https://github.com/sf-balaba/DA-in-GameDev-lab1/blob/9c013154fbfb5653be6021356293010f4fafb45f/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2020-09-2022%20100458.jpg
+https://github.com/sf-balaba/DA-in-GameDev-lab1/blob/9c013154fbfb5653be6021356293010f4fafb45f/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2020-09-2022%20100516.jpg
+Скриншот 20-09-2022 100458.jpg
+Скриншот 20-09-2022 100516.jpg
 
+- Для Unity в  отчёте привести чкриншоты вывода сообщения Hello World в консоль.
 
-- Добавила .json – файлы в Pacage Manager
-![2](https://user-images.githubusercontent.com/102922461/200721902-ca642622-7316-4b08-be52-b61784b07d5c.jpg)
-![Скриншот 08-11-2022 201317](https://user-images.githubusercontent.com/102922461/200602145-d21c9d0a-2602-4207-a565-19ff7c841115.jpg)
+https://github.com/sf-balaba/DA-in-GameDev-lab1/blob/9c013154fbfb5653be6021356293010f4fafb45f/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%2020-09-2022%20120107.jpg
+Скриншот 20-09-2022 120107.jpg
 
-- Создала виртуальную среду, установила необходимые пакеты
-![Скриншот 07-11-2022 220648](https://user-images.githubusercontent.com/102922461/200602868-538de42c-079b-4b03-a279-97e35884edd9.jpg)
-![Скриншот 07-11-2022 220705](https://user-images.githubusercontent.com/102922461/200602880-814353af-8704-450b-9be9-422e71b4ec70.jpg)
-
-- Создала сцену, подключила скрипт RollerAgent, добавила необходимые компоненты
-![Скриншот 07-11-2022 221750](https://user-images.githubusercontent.com/102922461/200603658-e8680771-a3ff-4e96-95dc-fc79e8d141ce.jpg)
-
-- В корень проекта дабавила конфигурационный файл
-![Скриншот 08-11-2022 202037](https://user-images.githubusercontent.com/102922461/200604130-7d0bfbac-6ea5-4e35-a17f-2b8b9326b272.jpg)
-
-- Запустила работу ml-agent
-![Скриншот 07-11-2022 222736](https://user-images.githubusercontent.com/102922461/200605178-dae2b8fe-26cf-43ae-b049-ed81f6e6a81d.jpg)
-
--	Сделайте 3, 9, 27 копий модели «Плоскость-Сфера-Куб», запустите симуляцию сцены и наблюдайте за результатом обучения модели.
-https://user-images.githubusercontent.com/102922461/200721893-b9528b44-81bf-4943-9010-8c901f895662.mp4
-https://user-images.githubusercontent.com/102922461/200721889-fab27637-bb1c-44b4-a90e-3abfbe95d734.mp4
-https://user-images.githubusercontent.com/102922461/200721895-fb65115a-3490-4bed-a5ce-92c86614dfff.mp4
-
-- Проверяем работу модели
-https://user-images.githubusercontent.com/102922461/200723288-a9546a73-88b0-47aa-bfd5-5260395dbdc9.mp4
-
-- Вывод: Модель быстрее обучается когда тренируются одновременно несколько экзамепляров. Обученная модель ищет оптимальный путь к target, преодалевая минимальное расстояние,  что свидетельствует о том, что модель обучилась достаточно хорошо.
 
 ## Задание 2
-### Подробно опишите каждую строку файла конфигурации нейронной сети, доступного в папке с файлами проекта по ссылке. 
+### В разделе "ход работы" пошагово выполнить каждый пункт  с описанием и примерами реализации задач по теме лабораторной работы.
 
 Ход работы:
- - Самостоятельно найдите информацию о компонентах Decision Requester, Behavior Parameters, добавленных на сфере.
+ - Произвести подготовку данных для работы с алгоритмом линейной регрессии. 10 видов данных были установлены случайным образом, и данные находились в линейной зависимости. Данные преобразуются в формат массива, чтобы их можно было вычислить напрямую при использовании умножения и сложения.
 
- ```
- behaviors:
-  RollerBall:
-    trainer_type: ppo #тип нейросети алгоритм обучения с подкреплением
-    hyperparameters:
-      batch_size: 10 #Количество опытов в каждой итерации градиентного спуска
-      buffer_size: 100 #количество опыта, который необходимо собрать перед обновлением модели 
-      learning_rate: 3.0e-4 # скорость обучения
-      beta: 5.0e-4 #доля случайных действий
-      epsilon: 0.2 # порог расхождения между старой и новой политиками при обновлении градиентного спуска
-      lambd: 0.99 #насколько агент уверен в оценке 
-      num_epoch: 3 #количество эпох
-      learning_rate_schedule: linear #Определяет, как скорость обучения изменяется с течением времени
-    network_settings: #настройки модели
-      normalize: false #применяется ли нормализация к входным данным 
-      hidden_units: 128 #используется для генерации весов
-      num_layers: 2 #число слоёв
-    reward_signals:  #настройки вознаграждения
-      extrinsic:
-        gamma: 0.99 #агент должен действовать в настоящем, чтобы подготовиться к вознаграждению в отдаленном будущем
-        strength: 1.0 #фактор для будущих вознаграждений. Фактор, на который можно умножить вознаграждение, данное окружающей средой
-    max_steps: 500000 #Общее количество собранных наблюдений и предпринятых действий
-    time_horizon: 64 #Количество шагов взаимодействия, которые необходимо собрать для каждого агента перед добавлением его в буфер взаимодействия
-    summary_freq: 10000 #Количество опыта, который необходимо собрать перед созданием и отображением статистики обучения.
-    ```
+```py
 
- Цикл наблюдения-решения-действия-вознаграждения повторяется каждый раз, когда агент запрашивает решение. Чтобы агент запрашивал решения самостоятельно за регулярной интервал нужно добавить компонент в Объект GameObject агента. Agent.RequestDecision()Decision RequesterAgent.RequestDecision()
+In [ ]:
+#Import the required modules, numpy for calculation, and Matplotlib for drawing
+import numpy as np
+import matplotlib.pyplot as plt
+#This code is for jupyter Notebook only
+%matplotlib inline
 
- Класс Behavior Parameters абстрагирует логику принятия решений от самого Агента чтобы можно было использовать одну и ту же модель в нескольких агентах. Если есть файл, то для принятия решений будет использоватся нейронная сеть.
+# define data, and change list to array
+x = [3,21,22,34,54,34,55,67,89,99]
+x = np.array(x)
+y = [2,22,24,65,79,82,55,130,150,199]
+y = np.array(y)
 
+#Show the effect of a scatter plot
+plt.scatter(x,y)
+
+```
+
+- Определите связанные функции. Функция модели: определяет модель линейной регрессии wx+b. Функция потерь: функция потерь среднеквадратичной ошибки. Функция оптимизации: метод градиентного спуска для нахождения частных производных w и b.
+
+```py
+
+In [ ]:
+
+#The basic linear regression model is wx + b, and sinse this is a two-dementional space, the model is ax + b
+def model(a, b, x):
+  return a*x+b
+
+#The most commonly used ioss function of linear regression model is the loss function of mean variance difference
+def loss_function(a, b, x, y):
+  num = len(x)
+  prediction = model(a, b, x)
+  return (0.5/num) * (np.square(prediction-y)).sum()
+
+#The optimization function mainly USES partial derivatives to update two parameters a and b
+def optimize(a, b, x, y):
+  num = len(x)
+  prediction = model(a,b,x)
+  #Update the values of A and B by sinding the partial derivatives of the loss function on a and b
+  da = (1.0/num) * ((prediction -y)*x).sum()
+  db = (1.0/num) * ((prediction -y).sum())
+  a = a-Lr*da
+  b = b-Lr*db
+  return a, b
+
+  #iterated function, return a and b
+def iterate(a,b,x,y,times):
+  for i in range(times):
+    a,b = optimize(a,b,x,y)
+  return a, b
+
+```
+ 
+  - 3. Начать итерацию
+  Шаг 1 Инициализация и модель итеративной оптимизации 
+```py
+
+In [ ]:
+#Initialize parameters and display
+a = np.random.rand(1)
+print(a)
+b = np.random.rand(1)
+print(b)
+Lr = 0.000001
+
+#For thw first iteartion, thw parameter values, losses and visualization after the iteration are displayed
+a,b = iterate(a,b,x,y,1)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
+Шаг 2 На второй итерации отображаются значения параметров, значения потерь и эффекты визуализации после итрации
+```py
+
+In [ ]:
+
+a,b = iterate(a,b,x,y,2)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
+
+Шаг 3 Третья итерация показывает значения параметров, значения потерь и эффекты визуализации после итрации
+```py
+
+In [ ]:
+
+a,b = iterate(a,b,x,y,3)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
+Шаг 4 На четвёртой итерации отображаются значения параметров, значения потерь и эффекты визуализации после итрации
+```py
+
+In [ ]:
+
+a,b = iterate(a,b,x,y,4)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
+
+Шаг 5 Пятая итерация показывает значения параметров, значения потерь и эффекты визуализации после итрации
+```py
+
+In [ ]:
+
+a,b = iterate(a,b,x,y,5)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
+Шаг 6 10000-я итерация показывает значение параметра, значение потерь и эффект визуализации после итрации
+```py
+
+In [ ]:
+
+a,b = iterate(a,b,x,y,10000)
+prediction = model(a,b,x)
+loss = loss_function(a,b,x,y)
+print(a,b,loss)
+plt.scatter(x,y)
+plt.plot(x, prediction)
+
+```
 
 ## Задание 3
-### Доработайте сцену и обучите ML-Agent таким образом, чтобы шар перемещался между двумя кубами разного цвета.
+### Изучить код на Python и ответить на вопросы
 
-Ход работы:
-- Создадим новую сцену, добавим ещё один куб
-![10](https://user-images.githubusercontent.com/102922461/200802337-6f4d5e7a-566f-416e-808b-1f6fbf0d3506.jpg)
-- Добавм скрипт
+- Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
+
+Величина loss должна стермится к нулю при изменении исходных данных. Это подтверждается примером кода ниже. Выходные значения из третьго столбца(loss) стремятся к нулю
+```py
+
+#Import the required modules, numpy for calculation, and Matplotlib for drawing
+import numpy as np
+import matplotlib.pyplot as plt
+
+# define data, and change list to array
+x1 = [1,10,20,30,40,50,60,70,80,99]
+x1 = np.array(x1)
+y1 = [10,20,30,30,40,60,94,100,103,119]
+y1 = np.array(y1)
+
+x = [3,21,22,34,54,34,55,67,89,99]
+x = np.array(x)
+y = [2,22,24,65,79,82,55,130,150,199]
+y = np.array(y)
+
+#Show the effect of a scatter plot
+plt.scatter(x,y)
+#The basic linear regression model is wx + b, and sinse this is a two-dementional space, the model is ax + b
+
+def model(a, b, x):
+  return a*x+b
+
+#The most commonly used ioss function of linear regression model is the loss function of mean variance difference
+def loss_function(a, b, x, y):
+  num = len(x)
+  prediction = model(a, b, x)
+  return (0.5/num) * (np.square(prediction-y)).sum()
+
+#The optimization function mainly USES partial derivatives to update two parameters a and b
+def optimize(a, b, x, y):
+  num = len(x)
+  prediction = model(a,b,x)
+  #Update the values of A and B by sinding the partial derivatives of the loss function on a and b
+  da = (1.0/num) * ((prediction -y)*x).sum()
+  db = (1.0/num) * ((prediction -y).sum())
+  a = a-Lr*da
+  b = b-Lr*db
+  return a, b
+
+#iterated function, return a and b
+def iterate(a,b,x,y,times):
+  for i in range(times):
+    a,b = optimize(a,b,x,y)
+  return a, b
+
+#Initialize parameters and display
+a = np.random.rand(1)
+print(a)
+b = np.random.rand(1)
+print(b)
+Lr = 0.000001
+
+#count of iterations
+iteration_number = [1,10, 100,1000, 5000, 10000]
+def iterate_data(a, b,x, y, colors):
+  for i in range(len(iteration_number)):
+    a,b = iterate(a,b,x,y, iteration_number[i])
+    prediction = model(a,b,x)
+    loss = loss_function(a,b,x,y)
+    print(a,b,loss)
+    plt.scatter(x,y, c = colors[len(colors)-1])
+    if(i == len(iteration_number)):
+      plt.plot(x, prediction, c = colors[i], linewidth = 6)
+    else:
+      plt.plot(x, prediction, c = colors[i])
+
+iterate_data(a,b,x,y,  [ '#8B0000', '#FA8072', '#DC143C', '#B22222', '#FFA07A', 'red' ])
+print("\n")
+#change data
+iterate_data(a,b,x1, y1,  ['#000080', '#48D1CC', '#48D1CC', '#4682B4', 'darkblue','#00008B'])
+
+plt.xscale("log")
+plt.yscale("log")
+plt.xscale("log")
+plt.yscale("log")
+
 
 ```
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Unity.MLAgents;
-using Unity.MLAgents.Sensors;
-using Unity.MLAgents.Actuators;
 
-public class RollerAgent : Agent
-{
-    Rigidbody rBody;
-    void Start()
-    {
-        rBody = GetComponent<Rigidbody>();
-    }
-    public GameObject Target_1;
-    public GameObject Target_2;
-    private bool firstTargetCollected;
-    private bool secondTargetCollected;
-    public override void OnEpisodeBegin()
-    {
-        if (this.transform.localPosition.y < 0)
-        {
-            this.rBody.angularVelocity = Vector3.zero;
-            this.rBody.velocity = Vector3.zero;
-            this.transform.localPosition = new Vector3(0, 0.5f, 0);
-        }
-        Target_1.transform.localPosition = new Vector3(Random.value * 8-4, 0.5f, Random.value * 8-4);
-        Target_2.transform.localPosition = new Vector3(Random.value * 8-4, 0.5f, Random.value * 8-4);
-        Target_1.SetActive(true);
-        Target_2.SetActive(true);
-        firstTargetCollected = false;
-        secondTargetCollected = false;
-    }
-    public override void CollectObservations(VectorSensor sensor)
-    {
-        sensor.AddObservation(Target_1.transform.localPosition);
-        sensor.AddObservation(Target_2.transform.localPosition);
-        sensor.AddObservation(this.transform.localPosition);
-        sensor.AddObservation(firstTargetCollected);
-        sensor.AddObservation(secondTargetCollected);
-        sensor.AddObservation(rBody.velocity.x);
-        sensor.AddObservation(rBody.velocity.z);
-    }
-    public float forceMultiplier = 10;
-    public override void OnActionReceived(ActionBuffers actionBuffers)
-    {
-        Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actionBuffers.ContinuousActions[0];
-        controlSignal.z = actionBuffers.ContinuousActions[1];
-        rBody.AddForce(controlSignal * forceMultiplier);
-        
-        float distanceToTarget_1 = Vector3.Distance(this.transform.localPosition, Target_1.transform.localPosition);
-        float distanceToTarget_2 = Vector3.Distance(this.transform.localPosition, Target_2.transform.localPosition);
-        if (!firstTargetCollected & distanceToTarget_1 < 1.42f)
-        {
-            firstTargetCollected = true;
-            Target_1.SetActive(false);
-        }
-        if (!secondTargetCollected & distanceToTarget_2 < 1.42f)
-        {
-            secondTargetCollected = true;
-            Target_2.SetActive(false);
-        }
-        if(firstTargetCollected & secondTargetCollected)
-        {
-            SetReward(1.0f);
-            EndEpisode();
-        }
-        else if (this.transform.localPosition.y < 0)
-        {
-            EndEpisode();
-        }
-    }
-}
+
+ - Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
+
+ Lr -  параметр, минимизирующий функцию потерь при вычисления параметров модели(а, b). Сумма квадратов отклонений точек влияет на параметры модели, которая соответствует реальным наблюдениям данных, от линии регрессии, в идеале должна быть минимальной(optimize). Поэтому чтобы минимизировать сумму квадратов реальных отклонений данных от регрессионной линии необходимо экспериментально близко к идеалу определить этот параметр. Таким образом мы выбираем лучшую из вариаций линейной регрессии.
+
+```py 
+#Import the required modules, numpy for calculation, and Matplotlib for drawing
+import numpy as np
+import matplotlib.pyplot as plt
+
+# define data, and change list to array
+x = [3,21,22,34,54,34,55,67,89,99]
+x = np.array(x)
+y = [2,22,24,65,79,82,55,130,150,199]
+y = np.array(y)
+
+#Show the effect of a scatter plot
+plt.scatter(x,y)
+#The basic linear regression model is wx + b, and sinse this is a two-dementional space, the model is ax + b
+
+def model(a, b, x):
+  return a*x+b
+
+#The most commonly used ioss function of linear regression model is the loss function of mean variance difference
+def loss_function(a, b, x, y):
+  num = len(x)
+  prediction = model(a, b, x)
+  return (0.5/num) * (np.square(prediction-y)).sum()
+
+#The optimization function mainly USES partial derivatives to update two parameters a and b
+def optimize(a, b, x, y, lr):
+  num = len(x)
+  prediction = model(a,b,x)
+  #Update the values of A and B by sinding the partial derivatives of the loss function on a and b
+  da = (1.0/num) * ((prediction -y)*x).sum()
+  db = (1.0/num) * ((prediction -y).sum())
+  a = a-lr*da
+  b = b-lr*db
+  return a, b
+
+#iterated function, return a and b
+def iterate(a,b,x,y,times, lr):
+  for i in range(times):
+    a,b = optimize(a,b,x,y, lr)
+  return a, b
+
+#Initialize parameters and display
+a = np.random.rand(1)
+print(a)
+b = np.random.rand(1)
+print(b)
+Lr = 0.000001
+
+iteration_number = [1,2,3,4,5,10000]
+def iterate_data(a, b,x, y, lr, colors):
+  for i in range(len(iteration_number)):
+    a,b = iterate(a,b,x,y, iteration_number[i], lr)
+    prediction = model(a,b,x)
+    loss = loss_function(a,b,x,y)
+    print(a,b,loss)
+    plt.scatter(x,y)
+    if(i == len(iteration_number)):
+      plt.plot(x, prediction, c = colors[i], linewidth = 6)
+    else:
+      plt.plot(x, prediction, c = colors[i])
+
+iterate_data(a,b,x,y, Lr, ['#8B0000', '#FA8072', '#DC143C', '#B22222', '#FFA07A', 'red' ])
+print("\n")
+iterate_data(a,b,x, y, Lr/100, ['#000080', '#48D1CC', '#48D1CC', '#4682B4', 'darkblue','#00008B'])
+print("\n")
+iterate_data(a,b,x,y, Lr*100, ['#FFFF66', '#FFF44F', '#F8F32B', '#FFB300', '#F4C800',  'yellow'])
+print("\n")
+iterate_data(a,b,x,y, Lr/1000, ['#C5E384', '#9ACD32', '#4CBB17', '#138808', '#228B22', 'green'])
+
 ```
-- Результат после обучения на 3, 9 и 27 экзамплярах
-![11](https://user-images.githubusercontent.com/102922461/200811736-c5060c9c-7843-433f-9cba-6cb4f4ebe0f6.gif)
+https://github.com/sf-balaba/DA-in-GameDev-lab1/blob/7681957febb1d8004778c0412d5fe9a5553e14cb/Task3.ipynb
+
 ## Выводы
-В ходе лабораторной работы создала простую системы машинного обучения в Unity. Познакомилась с технологией Unity - ml-agents и её возможностями на примере обучения с подкреплением. Ознакомилась с конфигурациями нейронной сети. В ходе работы также выяснила, что при увеличении количества копий модели - она обучается быстрее.
 
-Игровой баланс это попытка сделать игру цельной и играбельной. Сделать игру сбалансированной по сложности и масимально приносящей удовольствие. Баланс определяется соотношением сложности взаимодействия между объектами(компонентами) игры. Достигнуть баланса можно посредством модификации и настройки параметров,  разнообразием персонажей, команд, тактик игры и т.п. Баланс должен быть во времени игры, в её сложности, в сюжете (он должен быть разнообразным). Машинное обучение применяется для нахождения игрового баланса. Методы машинного обучения позволяют более точно определить игровые механики, которые справятся с задачей нахождения игрового баланса. Например, подстраивать характеристики мира, чтобы персонажу было интересно развиваться, усложнять миссии, если персонаж имеет высокие характеристики, балансировка оружия, балансировка силы(выносливость, дамаг, хилл, интеллект).
+В ходе проделанной мною работы я установила необходимое программное обеспечение, познакомилась с основными конструкциями Pyhton на примере реализации линейной регрссии, подробнее изучила алгоритм линейной регрессии: функцию потерь, которая использует метод наименьших квадратов, поэкспериментировала с величинами, изменяя исходные данные и величину Lr, поняла смысл Lr и loss в ходе экспериментов. Правильно подобранный Lr(коэффициент ковариации) помогает выбрать максимально близкий к идеалу вариант из вариаций линейных регрессий. Величина loss, стремится к нулю при любых данных, а также с возрастанием числа инетераци й loss уменьшается, стремясь к нулю. Я подтвердила это предположение примером кода.
 
 | Plugin | README |
 | ------ | ------ |
